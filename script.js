@@ -81,7 +81,7 @@ mainContainer.addEventListener('click', function (event) {
         const jobType = parentNode.querySelector('.jobType').innerText
         let status = parentNode.querySelector('.status-btn')
         const experience = parentNode.querySelector('.experience').innerText
-        status = "Interview"
+        // status = "Interview"
         // status.innerText = "Interview"
         parentNode.querySelector('.status-btn').classList.remove('bg-blue-200')
         parentNode.querySelector('.status-btn').classList.add('text-green-500', 'border-2', 'btn', 'btn-soft', 'border-green-500')
@@ -96,7 +96,7 @@ mainContainer.addEventListener('click', function (event) {
             companyName,
             jobName,
             jobType,
-            status,
+            status: "Interview",
             experience,
 
         }
@@ -127,7 +127,7 @@ mainContainer.addEventListener('click', function (event) {
         const jobType = parentNode.querySelector('.jobType').innerText
         let status = parentNode.querySelector('.status-btn')
         const experience = parentNode.querySelector('.experience').innerText
-        status = "Rejected"
+        // status = "Rejected"
         parentNode.querySelector('.status-btn').classList.remove('bg-blue-200')
         parentNode.querySelector('.status-btn').classList.add('text-red-500', 'border-2', 'btn', 'btn-soft', 'border-red-500')
         //    `
@@ -138,7 +138,7 @@ mainContainer.addEventListener('click', function (event) {
             companyName,
             jobName,
             jobType,
-            status,
+            status: "Rejected",
             // rejectedStatus,
             experience,
 
@@ -187,30 +187,30 @@ mainContainer.addEventListener('click', function (event) {
             renderRejected()
         }
     }
-    //  else if (event.target.closest('.delete-icon')) {
-    //     const parentNode = event.target.parentNode.parentNode.parentNode.parentNode;
-    //     // console.log(parentNode);
-    //     parentNode.remove()
-    //     // filter section count remove if the current status is interview or rejected 
-    //     const filterCount = document.getElementById('filterCount')
-    //     const of = document.getElementById('of')
-    //     filterCount.innerText = rejectedList.length
-    //     of.classList.remove('hidden')
-    //     filterCount.classList.remove('hidden')
-    //       calculateCount()
-    // }else if (event.target.closest('.delete-icon')) {
-    //     const parentNode = event.target.parentNode.parentNode.parentNode.parentNode;
-    //     // console.log(parentNode);
-    //     parentNode.remove()
-    //     // filter section count remove if the current status is interview or rejected 
-    //     const filterCount = document.getElementById('filterCount')
-    //     const of = document.getElementById('of')
-    //     filterCount.innerText = interviewList.length
-    //     // filterCount.innerText = interviewList.length
-    //     of.classList.remove('hidden')
-    //     filterCount.classList.remove('hidden')
-    //       calculateCount()
-    // }
+     else if (event.target.closest('.delete-icon')) {
+        const parentNode = event.target.parentNode.parentNode.parentNode.parentNode;
+        // console.log(parentNode);
+        parentNode.remove()
+        // filter section count remove if the current status is interview or rejected 
+        const filterCount = document.getElementById('filterCount')
+        const of = document.getElementById('of')
+        filterCount.innerText = rejectedList.length
+        of.classList.remove('hidden')
+        filterCount.classList.remove('hidden')
+          calculateCount()
+    }else if (event.target.closest('.delete-icon')) {
+        const parentNode = event.target.parentNode.parentNode.parentNode.parentNode;
+        // console.log(parentNode);
+        parentNode.remove()
+        // filter section count remove if the current status is interview or rejected 
+        const filterCount = document.getElementById('filterCount')
+        const of = document.getElementById('of')
+        filterCount.innerText = interviewList.length
+        filterCount.innerText = interviewList.length
+        of.classList.remove('hidden')
+        filterCount.classList.remove('hidden')
+          calculateCount()
+    }
 
 
 })
