@@ -202,7 +202,7 @@ mainContainer.addEventListener('click', function (event) {
         const parentNode = event.target.parentNode.parentNode.parentNode.parentNode;
         // console.log(parentNode);
         parentNode.remove()
-        // filter section count remove if the current status is interview or rejected 
+    //   count korbe ar inner text change korbe 
         const filterCount = document.getElementById('filterCount')
         const of = document.getElementById('of')
         filterCount.innerText = interviewList.length
