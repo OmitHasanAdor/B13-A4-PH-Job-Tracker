@@ -27,12 +27,11 @@ function calculateCount() {
 calculateCount()
 
 function toggleStyle(id) {
-    // adding gray bg for all
+
     allFilterBtn.classList.add('bg-blue-600', 'text-white')
     interviewFilterBtn.classList.add('bg-blue-600', 'text-white')
     rejectedFilterBtn.classList.add('bg-blue-600', 'text-white')
 
-    // if any button has black then remove
     allFilterBtn.classList.remove('bg-blue-600', 'text-white')
     interviewFilterBtn.classList.remove('bg-blue-600', 'text-white')
     rejectedFilterBtn.classList.remove('bg-blue-600', 'text-white')
@@ -108,11 +107,11 @@ mainContainer.addEventListener('click', function (event) {
             interviewList.push(cardInfo)
         }
 
-        // step 2 finish
-        // removing the plant from struggling list
+    
+        // removing the job from rejected list
         rejectedList = rejectedList.filter(item => item.companyName != cardInfo.companyName)
 
-        // after remove rerender the html
+   
         if (currentStatus == 'rejected-filter-btn') {
             renderRejected()
         }
@@ -152,10 +151,10 @@ mainContainer.addEventListener('click', function (event) {
 
         }
 
-        // removing the job from struggling list
+        // removing the job from jobs list
         interviewList = interviewList.filter(item => item.companyName != cardInfo.companyName)
 
-        // after remove rerender the html
+        // after remove re render the html
         if (currentStatus == "interview-filter-btn") {
             renderInterview();
         }
@@ -250,7 +249,7 @@ function renderInterview() {
     of.classList.remove('hidden')
     filterCount.classList.remove('hidden')
 
-    // delete item 
+    // hidden class 
     if (interviewList.length === 0) {
         document.getElementById('emptyCardCont').classList.remove('hidden')
     } 
@@ -259,7 +258,7 @@ function renderInterview() {
     }
 
 }
-
+// rendering rejected 
 function renderRejected() {
     filterSection.innerHTML = ''
     for (let rejected of rejectedList) {
