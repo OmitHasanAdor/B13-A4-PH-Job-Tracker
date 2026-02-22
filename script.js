@@ -66,8 +66,8 @@ function toggleStyle(id) {
     } else if (id == 'rejected-filter-btn') {
         allCardSection.classList.add('hidden');
         filterSection.classList.remove('hidden')
-        renderRejected()
         document.getElementById('emptyCardCont').classList.add('hidden')
+        renderRejected()
     }
 
 }
