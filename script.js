@@ -82,7 +82,7 @@ mainContainer.addEventListener('click', function (event) {
         let status = parentNode.querySelector('.status-btn')
         const experience = parentNode.querySelector('.experience').innerText
         // status = "Interview"
-        // status.innerText = "Interview"
+        status.innerText = "Interview"
         parentNode.querySelector('.status-btn').classList.remove('bg-blue-200')
         parentNode.querySelector('.status-btn').classList.add('text-green-500', 'border-2', 'btn', 'btn-soft', 'border-green-500')
 
@@ -127,7 +127,7 @@ mainContainer.addEventListener('click', function (event) {
         const jobType = parentNode.querySelector('.jobType').innerText
         let status = parentNode.querySelector('.status-btn')
         const experience = parentNode.querySelector('.experience').innerText
-        // status = "Rejected"
+        status.innerText = "Rejected"
         parentNode.querySelector('.status-btn').classList.remove('bg-blue-200')
         parentNode.querySelector('.status-btn').classList.add('text-red-500', 'border-2', 'btn', 'btn-soft', 'border-red-500')
         //    `
