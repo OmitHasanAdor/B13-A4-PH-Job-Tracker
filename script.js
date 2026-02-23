@@ -155,6 +155,7 @@ mainContainer.addEventListener('click', function (event) {
         if (currentStatus == "interview-filter-btn") {
             renderInterview();
         }
+
         calculateCount()
     } else if (event.target.closest('.delete-icon')) {
         const card = event.target.closest('.card')
@@ -288,3 +289,4 @@ function renderRejected() {
         document.getElementById('emptyCardCont').classList.add('hidden')
     }
 }
+
