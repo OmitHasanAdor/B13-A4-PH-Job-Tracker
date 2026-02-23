@@ -107,7 +107,6 @@ mainContainer.addEventListener('click', function (event) {
             interviewList.push(cardInfo)
         }
 
-    
         // removing the job from rejected list
         rejectedList = rejectedList.filter(item => item.companyName != cardInfo.companyName)
 
@@ -141,7 +140,6 @@ mainContainer.addEventListener('click', function (event) {
             status: "Rejected",
             // rejectedStatus,
             experience,
-
         }
 
         const jobExist = rejectedList.find(item => item.companyName == cardInfo.companyName)
@@ -150,7 +148,6 @@ mainContainer.addEventListener('click', function (event) {
             rejectedList.push(cardInfo)
 
         }
-
         // removing the job from jobs list
         interviewList = interviewList.filter(item => item.companyName != cardInfo.companyName)
 
@@ -160,57 +157,47 @@ mainContainer.addEventListener('click', function (event) {
         }
         calculateCount()
     } else if (event.target.closest('.delete-icon')) {
-
         const card = event.target.closest('.card')
-
         const companyName = card.querySelector('.companyName').innerText
-
-
         card.remove()
-
-
         interviewList = interviewList.filter(item =>
             item.companyName !== companyName
         )
-
-
         rejectedList = rejectedList.filter(item =>
             item.companyName !== companyName
         )
-
         calculateCount()
 
         if (currentStatus === 'interview-filter-btn') {
             renderInterview()
-        }
-        else if (currentStatus === 'rejected-filter-btn') {
+        }else if (currentStatus === 'rejected-filter-btn') {
             renderRejected()
         }
     }
-     else if (event.target.closest('.delete-icon')) {
-        const parentNode = event.target.parentNode.parentNode.parentNode.parentNode;
-        // console.log(parentNode);
-        parentNode.remove()
-        // filter section count remove if the current status is interview or rejected 
-        const filterCount = document.getElementById('filterCount')
-        const of = document.getElementById('of')
-        filterCount.innerText = rejectedList.length
-        of.classList.remove('hidden')
-        filterCount.classList.remove('hidden')
-          calculateCount()
-    }else if (event.target.closest('.delete-icon')) {
-        const parentNode = event.target.parentNode.parentNode.parentNode.parentNode;
-        // console.log(parentNode);
-        parentNode.remove()
-    //   count korbe ar inner text change korbe 
-        const filterCount = document.getElementById('filterCount')
-        const of = document.getElementById('of')
-        filterCount.innerText = interviewList.length
-        filterCount.innerText = interviewList.length
-        of.classList.remove('hidden')
-        filterCount.classList.remove('hidden')
-          calculateCount()
-    }
+    //  else if (event.target.closest('.delete-icon')) {
+    //     const parentNode = event.target.parentNode.parentNode.parentNode.parentNode;
+    //     // console.log(parentNode);
+    //     parentNode.remove()
+    //     // filter section count remove if the current status is interview or rejected 
+    //     const filterCount = document.getElementById('filterCount')
+    //     const of = document.getElementById('of')
+    //     filterCount.innerText = rejectedList.length
+    //     of.classList.remove('hidden')
+    //     filterCount.classList.remove('hidden')
+    //       calculateCount()
+    // }else if (event.target.closest('.delete-icon')) {
+    //     const parentNode = event.target.parentNode.parentNode.parentNode.parentNode;
+    //     // console.log(parentNode);
+    //     parentNode.remove()
+    // //   count korbe ar inner text change korbe 
+    //     const filterCount = document.getElementById('filterCount')
+    //     const of = document.getElementById('of')
+    //     filterCount.innerText = interviewList.length
+    //     filterCount.innerText = interviewList.length
+    //     of.classList.remove('hidden')
+    //     filterCount.classList.remove('hidden')
+    //       calculateCount()
+    // }
 
 
 })
