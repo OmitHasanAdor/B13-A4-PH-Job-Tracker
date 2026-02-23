@@ -114,7 +114,7 @@ mainContainer.addEventListener('click', function (event) {
         if (currentStatus == 'rejected-filter-btn') {
             renderRejected()
         }
-
+        updateAllSectionStatus(companyName, "Interview")
         calculateCount()
 
 
@@ -155,7 +155,7 @@ mainContainer.addEventListener('click', function (event) {
         if (currentStatus == "interview-filter-btn") {
             renderInterview();
         }
-
+updateAllSectionStatus(companyName, "Rejected")
         calculateCount()
     } else if (event.target.closest('.delete-icon')) {
         const card = event.target.closest('.card')
@@ -290,3 +290,25 @@ function renderRejected() {
     }
 }
 
+
+
+// new logic for update 
+function updateAllSectionStatus(companyName, newStatus) {
+    // All Cards find and update the status
+    const allCards = allCardSection.querySelectorAll('.card');
+    allCards.forEach(card => {
+        const name = card.querySelector('.companyName').innerText;
+        if (name === companyName) {
+            const statusBtn = card.querySelector('.status-btn');
+            statusBtn.innerText = newStatus;
+
+            // style update 
+            statusBtn.classList.remove('bg-blue-200', 'text-green-500', 'text-red-500', 'border-green-500', 'border-red-500');
+            if (newStatus === 'Interview') {
+                statusBtn.classList.add('text-green-500', 'border-2', 'border-green-500');
+            } else {
+                statusBtn.classList.add('text-red-500', 'border-2', 'border-red-500');
+            }
+        }
+    });
+}
